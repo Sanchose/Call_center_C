@@ -1,0 +1,427 @@
+#include <iostream>
+#include <vector>
+#include <fstream>
+#include <string>
+class Full
+{
+public:
+    char sh[5][50];
+};
+using namespace std;
+int user(int n) {
+    const int len = 50, strings = 4;
+    const char ch = '\n';
+    char mass[len][strings];
+    Full M;
+    do {
+        cout << "Choose what you want?" << endl;
+        cout << "1)Display" << endl;
+        cout << "2)Enter data" << endl;
+        cout << "3)Sort" << endl;
+        cout << "4)Search" << endl;
+        cout << "0)Quit" << endl;
+        cout << "Your choose:";
+        cin >> n;
+        if (n == 1) {
+            int p;
+            do {
+                string h;
+                int m, m1, m2, m3, m4, z, z1, z2, z3, z4;
+                string a, b, c, d, e, g;
+                string a1, b1, c1, d1, e1, g1;
+                string a2, b2, c2, d2, e2, g2;
+                string a3, b3, c3, d3, e3, g3;
+                string a4, b4, c4, d4, e4, g4;
+                string OOP[12][7];
+                ifstream nin;
+                nin.open("NUM.txt");
+                for(int i = 0; i < 6; i++)
+                {
+                    for(int j = 0; j < 7; j++)
+                    {
+                        nin >> OOP[j][i];
+                    }
+                }
+                nin.close();
+                for(int j = 0; j < 6; j++)
+                {
+                    for(int i = 0; i < 7; i++)
+                    {
+                        if(OOP[i][j] != "") {
+                            if (i == 0) {
+                                cout << "Sir: " << OOP[i][j] << " ";
+                            }
+                            if (i == 1) {
+                                cout << " Number: " << OOP[i][j];
+                            }
+                            if (i == 2) {
+                                cout << ". Vud dzvinka: " << OOP[i][j] << ". ";
+                            }
+                            if (i == 3) {
+                                cout << " Day: " << OOP[i][j];
+                            }
+                            if (i == 4) {
+                                cout << " Hour: " << OOP[i][j];
+                            }
+                            if (i == 5) {
+                                cout << " Time of call: " << OOP[i][j];
+                            }
+                            if (i == 6) {
+                                cout << " minutes. Tarufnuy plan: " << OOP[i][j] << " per min";
+                            }
+                        }
+                    }
+                    cout << endl;
+                }
+                nin.close();
+                cout << "0) Exit " << endl;
+                cout << "Choose: ";
+                cin >> p;
+            } while (p != 0);
+        } else if (n == 2) {
+            int p;
+            int k = 0;
+            int i = 0;
+            string u, y, t, r;
+            int m, m1, m2, m3, m4, z, z1, z2, z3, z4, e, e1, e2, e3, e4;
+            string a, b, c, d, g;
+            string a1, b1, c1, d1, g1;
+            string a2, b2, c2, d2, g2;
+            string a3, b3, c3, d3, g3;
+            string a4, b4, c4, d4, g4;
+            do {
+                string OOP[12][7];
+                ifstream nin;
+                nin.open("NUM.txt");
+                for (int i = 0; i < 6; i++) {
+                    for (int j = 0; j < 7; j++) {
+                        nin >> OOP[j][i];
+                    }
+                }
+                nin.close();
+                const int len = 43, strings = 4;
+                const char ch = '\n';
+                char mass[len][strings];
+                char mass1[4][43];
+                cout << "Enter date from day:";
+                cin >> u;
+                cout << "Enter date to day:";
+                cin >> y;
+                for (int j = 0; j < 6; j++) {
+                    if (OOP[3][i + k] >= u && OOP[3][i + k] <= y) {
+                        cout << "Sir: " << OOP[i][j] << " ";
+                        cout << " Number: " << OOP[i + 1][j];
+                        cout << ". Vud dzvinka: " << OOP[i + 2][j] << ". ";
+                        cout << " Day: " << OOP[i + 3][j];
+                        cout << " Hour: " << OOP[i + 4][j];
+                        cout << " Time of call: " << OOP[i + 5][j];
+                        cout << " minutes. Tarufnuy plan: " << OOP[i + 6][j] << " per min" << endl;
+                    }
+                    k++;
+                }
+                cout << "0) Exit " << endl;
+                cout << "Choose: ";
+                cin >> p;
+            } while (p != 0);
+        }
+        else if (n == 3) {
+            int p;
+            string h;
+            char fir[7];
+            char sec[7];
+            char thir[7];
+            char four[7];
+            int m, m1, m2, m3, m4, z, z1, z2, z3, z4;
+            string a, b, c, d, e, g;
+            string a1, b1, c1, d1, e1, g1;
+            string a2, b2, c2, d2, e2, g2;
+            string a3, b3, c3, d3, e3, g3;
+            string a4, b4, c4, d4, e4, g4;
+            ifstream nin;
+            nin.open("NUM.txt");
+            nin >> a >> c >> d >> e >> g >> m >> z
+                >> a1 >> c1 >> d1 >> e1 >> g1 >> m1 >> z1 >>
+                a2 >> c2 >> d2 >> e2 >> g2 >> m2 >> z2 >>
+                a3 >> c3 >> d3 >> e3 >> g3 >> m3 >> z3;
+            nin.close();
+            do {
+                cout << "Choose:" << endl;
+                cout << "1)Name" << endl;
+                cout << "2)Number" << endl;
+                cout << "3)Date" << endl;
+                cout << "Sort by:";
+                cin >> z4;
+                string arr[] = {a, a1, a2, a3, a4};
+                for (int i = 0; i < 5 - 1; i++) {
+                    for (int j = 0; j < 5 - i - 1; j++) {
+                        if (arr[j] > arr[j + 1]) {
+                            h = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = h;
+                        }
+                    }
+                }
+                if (z4 == 1) {
+                    for (int i = 0; i < 5; i++) {
+                        if (arr[i] == a && a != "") {
+                            cout <<
+                                 "Sir: " << a << " " << " Number: " << c << ". Vud dzvinka: " << d << "." << endl
+                                 << " Day: " << e
+                                 << " Hour: " << g << " Time of call: " << m << " minutes. Tarufnuy plan: " << z
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == a1 && a1 != "") {
+                            cout <<
+                                 "Sir: " << a1 << " " << " Number: " << c1 << ". Vud dzvinka: " << d1 << "." << endl
+                                 << " Day: " << e1
+                                 << " Hour: " << g1 << " Time of call: " << m1 << " minutes. Tarufnuy plan: " << z1
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == a2 && a2 != "") {
+                            cout <<
+                                 "Sir: " << a2 << " " << " Number: " << c2 << ". Vud dzvinka: " << d2 << "." << endl
+                                 << " Day: " << e2
+                                 << " Hour: " << g2 << " Time of call: " << m2 << " minutes. Tarufnuy plan: " << z2
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == a3 && a3 != "") {
+                            cout <<
+                                 "Sir: " << a3 << " " << " Number: " << c3 << ". Vud dzvinka: " << d3 << "." << endl
+                                 << " Day: " << e3
+                                 << " Hour: " << g3 << " Time of call: " << m3 << " minutes. Tarufnuy plan: " << z3
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == a4 && a4 != "") {
+                            cout <<
+                                 "Sir: " << a4 << " " << " Number: " << c4 << ". Vud dzvinka: " << d4 << "." << endl
+                                 << " Day: " << e4
+                                 << " Hour: " << g4 << " Time of call: " << m4 << " minutes. Tarufnuy plan: " << z4
+                                 << " per min"
+                                 << endl;
+                        }
+                    }
+                } else if (z4 == 2) {
+                    string arr[] = {c, c1, c2, c3, c4};
+                    for (int i = 0; i < 5 - 1; i++) {
+                        for (int j = 0; j < 5 - i - 1; j++) {
+                            if (arr[j] > arr[j + 1]) {
+                                h = arr[j];
+                                arr[j] = arr[j + 1];
+                                arr[j + 1] = h;
+                            }
+                        }
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        if (arr[i] == c && c != "") {
+                            cout <<
+                                 "Sir: " << a << " " << " Number: " << c << ". Vud dzvinka: " << d << "." << endl
+                                 << " Day: " << e
+                                 << " Hour: " << g << " Time of call: " << m << " minutes. Tarufnuy plan: " << z
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == c1 && c1 != "") {
+                            cout <<
+                                 "Sir: " << a1 << " " << " Number: " << c1 << ". Vud dzvinka: " << d1 << "." << endl
+                                 << " Day: " << e1
+                                 << " Hour: " << g1 << " Time of call: " << m1 << " minutes. Tarufnuy plan: " << z1
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == c2 && c2 != "") {
+                            cout <<
+                                 "Sir: " << a2 << " " << " Number: " << c2 << ". Vud dzvinka: " << d2 << "." << endl
+                                 << " Day: " << e2
+                                 << " Hour: " << g2 << " Time of call: " << m2 << " minutes. Tarufnuy plan: " << z2
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == c3 && c3 != "") {
+                            cout <<
+                                 "Sir: " << a3 << " " << " Number: " << c3 << ". Vud dzvinka: " << d3 << "." << endl
+                                 << " Day: " << e3
+                                 << " Hour: " << g3 << " Time of call: " << m3 << " minutes. Tarufnuy plan: " << z3
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == c4 && c4 != "") {
+                            cout <<
+                                 "Sir: " << a4 << " " << " Number: " << c4 << ". Vud dzvinka: " << d4 << "." << endl
+                                 << " Day: " << e4
+                                 << " Hour: " << g4 << " Time of call: " << m4 << " minutes. Tarufnuy plan: " << z4
+                                 << " per min"
+                                 << endl;
+                        }
+                    }
+
+                } else if (z4 == 3) {
+
+                    string arr[] = {e, e1, e2, e3, e4};
+                    for (int i = 0; i < 5 - 1; i++) {
+                        for (int j = 0; j < 5 - i - 1; j++) {
+                            if (arr[j] > arr[j + 1]) {
+                                h = arr[j];
+                                arr[j] = arr[j + 1];
+                                arr[j + 1] = h;
+                            }
+                        }
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        if (arr[i] == e && e != "") {
+                            cout <<
+                                 "Sir: " << a << " " << " Number: " << c << ". Vud dzvinka: " << d << "." << endl
+                                 << " Day: " << e
+                                 << " Hour: " << g << " Time of call: " << m << " minutes. Tarufnuy plan: " << z
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == e1 && e1 != "") {
+                            cout <<
+                                 "Sir: " << a1 << " " << " Number: " << c1 << ". Vud dzvinka: " << d1 << "." << endl
+                                 << " Day: " << e1
+                                 << " Hour: " << g1 << " Time of call: " << m1 << " minutes. Tarufnuy plan: " << z1
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == e2 && e2 != "") {
+                            cout <<
+                                 "Sir: " << a2 << " " << " Number: " << c2 << ". Vud dzvinka: " << d2 << "." << endl
+                                 << " Day: " << e2
+                                 << " Hour: " << g2 << " Time of call: " << m2 << " minutes. Tarufnuy plan: " << z2
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == e3 && e3 != "") {
+                            cout <<
+                                 "Sir: " << a3 << " " << " Number: " << c3 << ". Vud dzvinka: " << d3 << "." << endl
+                                 << " Day: " << e3
+                                 << " Hour: " << g3 << " Time of call: " << m3 << " minutes. Tarufnuy plan: " << z3
+                                 << " per min"
+                                 << endl;
+                        } else if (arr[i] == e4 && e4 != "") {
+                            cout <<
+                                 "Sir: " << a4 << " " << " Number: " << c4 << ". Vud dzvinka: " << d4 << "." << endl
+                                 << " Day: " << e4
+                                 << " Hour: " << g4 << " Time of call: " << m4 << " minutes. Tarufnuy plan: " << z4
+                                 << " per min"
+                                 << endl;
+                        }
+                    }
+                }
+                cout << "0) Exit";
+                cin >> p;
+            } while (p != 0);
+        } else if (n == 4) {
+            int u, y, t, r;
+            char fir[7];
+            char sec[7];
+            char thir[7];
+            char four[7];
+            int m, m1, m2, m3, m4, z, z1, z2, z3, z4;
+            string a, b, c, d, e, g, q, w;
+            string a1, b1, c1, d1, e1, g1;
+            string a2, b2, c2, d2, e2, g2;
+            string a3, b3, c3, d3, e3, g3;
+            string a4, b4, c4, d4, e4, g4;
+            ifstream nin;
+            nin.open("NUM.txt");
+            nin >> a >> c >> d >> e >> g >> m >> z
+                >> a1 >> c1 >> d1 >> e1 >> g1 >> m1 >> z1 >>
+                a2 >> c2 >> d2 >> e2 >> g2 >> m2 >> z2 >>
+                a3 >> c3 >> d3 >> e3 >> g3 >> m3 >> z3;
+            nin.close();
+            cout << "Enter name to find:";
+            cin >> q;
+            cout << "Enter vud dzvinka:";
+            cin >> w;
+            if (q == a && w == d) {
+                cout << "Sir " << a << " was speaking for: " << m << " minutes." << " Call is: " << d
+                     << ". Price of call:" << m * z << endl;
+            }
+            if (q == a1 && w == d1) {
+                cout << "Sir " << a1 << " was speaking for: " << m1 << " minutes." << " Call is: " << d1
+                     << ". Price of call:" << m1 * z1 << endl;
+            }
+            if (q == a2 && w == d2) {
+                cout << "Sir " << a2 << " was speaking for: " << m2 << " minutes." << " Call is: " << d2
+                     << ". Price of call:" << m2 * z2 << endl;
+            }
+            if (q == a3 && w == d3) {
+                cout << "Sir " << a3 << " was speaking for: " << m3 << " minutes." << " Call is: " << d3
+                     << ". Price of call:" << m3 * z3 << endl;
+            }
+            if ( q == a4 && w == d4)
+            {
+                cout << "Sir " << a4 << " was speaking for: " << m4 << " minutes." << " Call is: " << d4
+                     << ". Price of call:" << m4 * z4 << endl;
+            }
+        }
+    }while (n != 0);
+    return n;
+}
+int main() {
+    Full M;
+    char sh[4][15];
+    char ch[4][15];
+    int q = 0, n;
+    /*ofstream fout;
+    ofstream out;
+    out.open("NUM.txt",ios::app);
+    fout.open("PIB.txt",ios::app);*/
+    ifstream nin;
+    nin.open("NUM.txt");
+    nin.close();
+    do {
+        string log, pass1, pass2;
+        vector<string> data;
+        ifstream file("PASS!.txt");
+        file >> pass2 >> pass1;
+        cout << "*******Hello*******" << endl;
+        cout << "If exit press 0" << endl;
+        cout << "Input Log:";
+        const int l = 5;
+        char p[l];
+        const int o = 4;
+        char k[o];
+        for (int i = 0; i < 5; i++) {
+            cin >> p[i];
+        }
+        for (int i = 0; i < 5; i++) {
+            p[i] = tolower(p[i]);
+        }
+        string m(p, sizeof(p));
+        if (m == "admin") {
+            cout << "Input password:";
+            cout << pass1;
+            for (int i = 0; i < 4; i++) {
+                cin >> k[i];
+            }
+            for (int i = 0; i < 4; i++) {
+                k[i] = tolower(k[i]);
+            }
+            string pass(k, sizeof(k));
+            if (pass == pass1) {
+                cout << "Successful" << endl;
+            } else {
+                cout << "Error" << endl;
+            }
+        } else if (m == "userr") {
+            cout << "Input password:";
+            cout << pass2;
+            for (int i = 0; i < 4; i++) {
+                cin >> k[i];
+            }
+            for (int i = 0; i < 4; i++) {
+                k[i] = tolower(k[i]);
+            }
+            string pass(k, sizeof(k));
+            if (pass == pass2) {
+                cout << "Successful" << endl;
+                user(n);
+            } else {
+                cout << "Error" << endl;
+            }
+        }
+        else if (log == "0") {
+            cout << "<<<BB>>>" << endl;
+            break;
+        }
+        else
+            cout << "(Wrong)" << endl;
+
+    }
+    while(q != 1);
+}
